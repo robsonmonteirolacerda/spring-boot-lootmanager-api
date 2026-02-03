@@ -1,7 +1,8 @@
-package repository;
+package com.example.lootmanager.repository;
 
-import model.Player;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.lootmanager.model.Player;
 
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 }

@@ -1,4 +1,4 @@
-package model;
+package com.example.lootmanager.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

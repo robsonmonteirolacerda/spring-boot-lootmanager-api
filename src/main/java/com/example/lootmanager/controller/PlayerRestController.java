@@ -1,9 +1,10 @@
-package controller;
+package com.example.lootmanager.controller;
 
 
-import model.Player;
-import service.PlayerService;
 import org.springframework.web.bind.annotation.*;
+
+import com.example.lootmanager.model.Player;
+import com.example.lootmanager.service.PlayerService;
 
 import java.util.List;
 

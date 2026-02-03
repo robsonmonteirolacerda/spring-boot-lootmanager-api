@@ -1,8 +1,9 @@
-package service;
+package com.example.lootmanager.service;
 
-import model.Loot;
-import repository.LootRepository;
 import org.springframework.stereotype.Service;
+
+import com.example.lootmanager.model.Loot;
+import com.example.lootmanager.repository.LootRepository;
 
 import java.util.List;
 

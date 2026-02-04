@@ -1,35 +1,38 @@
 package com.example.lootmanager.service;
 
-import org.springframework.stereotype.Service;
-
 import com.example.lootmanager.model.Player;
 import com.example.lootmanager.repository.PlayerRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class PlayerService {
 
-    private final PlayerRepository repository;
+    private final PlayerRepository playerRepository;
 
-    public PlayerService(PlayerRepository repository) {
-        this.repository = repository;
+    public PlayerService(PlayerRepository playerRepository) {
+        this.playerRepository = playerRepository;
     }
 
+    // CREATE
     public Player save(Player player) {
-        return repository.save(player);
+        return playerRepository.save(player);
     }
 
+    // READ ALL
     public List<Player> findAll() {
-        return repository.findAll();
+        return playerRepository.findAll();
     }
 
+    // READ BY ID
     public Player findById(Long id) {
-        return repository.findById(id).orElse(null);
+        return playerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Player não encontrado"));
     }
 
+    // DELETE
     public void delete(Long id) {
-        repository.deleteById(id);
+        playerRepository.deleteById(id);
     }
 }
-

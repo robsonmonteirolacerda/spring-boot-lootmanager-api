@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LootmanagerApplication {
+public class LootManagerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(LootmanagerApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(LootManagerApplication.class, args);
+    }
 }

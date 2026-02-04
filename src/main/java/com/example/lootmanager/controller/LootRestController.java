@@ -1,39 +1,30 @@
 package com.example.lootmanager.controller;
 
+import com.example.lootmanager.model.Player;
+import com.example.lootmanager.service.PlayerService;
 import org.springframework.web.bind.annotation.*;
-
-import com.example.lootmanager.model.Loot;
-import com.example.lootmanager.service.LootService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/loots")
+@RequestMapping("/api/loot")
 public class LootRestController {
 
-    private final LootService lootService;
+    private final PlayerService playerService;
 
-    public LootRestController(LootService lootService) {
-        this.lootService = lootService;
+    public LootRestController(PlayerService playerService) {
+        this.playerService = playerService;
     }
 
-    @PostMapping
-    public Loot create(@RequestBody Loot loot) {
-        return lootService.save(loot);
+    // CREATE PLAYER
+    @PostMapping("/player")
+    public Player createPlayer(@RequestBody Player player) {
+        return playerService.save(player);
     }
 
-    @GetMapping
-    public List<Loot> list() {
-        return lootService.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public Loot getById(@PathVariable Long id) {
-        return lootService.findById(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
-        lootService.delete(id);
+    // LIST PLAYERS
+    @GetMapping("/players")
+    public List<Player> listPlayers() {
+        return playerService.findAll();
     }
 }

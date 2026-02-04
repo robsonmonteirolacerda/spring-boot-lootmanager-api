@@ -1,0 +1,25 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Loot Manager</title>
+  </head>
+  <body>
+    <h1>WoW Loot Manager</h1>
+
+    <table border="1">
+      <tr>
+        <th>Nome</th>
+        <th>Classe</th>
+        <th>Spec</th>
+        <th>BIS</th>
+      </tr>
+
+      <tr th:each="p : ${players}">
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.classe}"></td>
+        <td th:text="${p.spec}"></td>
+        <td th:text="${p.bisObtidos + '/' + p.bisTotal}"></td>
+      </tr>
+    </table>
+  </body>
+</html>
